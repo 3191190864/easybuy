@@ -44,6 +44,7 @@ public class EasybuyUser implements Serializable {
     private String mobile;
     /**
     * 类型（1：后台 0:前台）
+     * 帅帅帅
     */
     private Integer type;
 
