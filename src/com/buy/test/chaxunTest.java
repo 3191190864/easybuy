@@ -3,6 +3,8 @@ package com.buy.test;
 import com.buy.dao.IProduct.impl.ProductCategoryImpl;
 import com.buy.dao.IProduct.productCategory;
 import com.buy.entity.easybuyProductCategory;
+import com.buy.service.product.IProductCategoryService;
+import com.buy.service.product.IProductCategoryServiceImpl;
 import org.junit.Test;
 
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.List;
 public class chaxunTest {
     @Test
     public  void testProuctCategory(){
-        productCategory p=new ProductCategoryImpl();
+        IProductCategoryService p=new IProductCategoryServiceImpl();
        List<easybuyProductCategory> sv= p.queryAllProductCategory("0");
         for (easybuyProductCategory category : sv) {
             System.out.println(category.getName());

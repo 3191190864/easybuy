@@ -28,11 +28,15 @@ public class ProductCategoryImpl implements productCategory {
             sql.append("select * from easybuy_product_category where 1=1 and parentId=0");
             //判断id 如果为0 现实的是一级分类
             if ((!"".equals(parentID)||null!=parentID)){
-               parentID="0";
+                sql.append(" and parentId = ?");
             }
             Connection connection= dataSourceUtill.getConn();
             PreparedStatement pstmt= connection.prepareStatement(sql.toString());
+            if (!"".equals(parentID) && null != parentID) {
+                pstmt.setObject(1, parentID);
+            }
             ResultSet rs=pstmt.executeQuery();
+
             //处理接受结果
             while (rs.next()){
                 productCategory=new easybuyProductCategory();
