@@ -35,6 +35,6 @@ public class HomeSevelt extends HttpServlet {
         request.setAttribute("categoryList",categoryList);
 
         //携带数据跳转到home.jsp
-        request.getRequestDispatcher("/front/home.jsp").forward(request,response);
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 }
